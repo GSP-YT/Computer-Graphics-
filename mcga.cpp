@@ -2,13 +2,13 @@
 #include<graphics.h>
 
 void symmetry(int x,int y, int xc, int yc){
-	putpixel(xc+x,yc-y,RED);
+	putpixel(xc+x,yc-y,BLUE);
 	putpixel(xc+y,yc-x,GREEN);
 	putpixel(xc+y,yc+x,WHITE);
 	putpixel(xc+x,yc+y,YELLOW);
-	putpixel(xc-x,yc+y,GREEN);
-	putpixel(xc-y,yc+x,WHITE);
-	putpixel(xc-y,yc-x,BLUE);
+	putpixel(xc-x,yc+y,BLUE);
+	putpixel(xc-y,yc+x,GREEN);
+	putpixel(xc-y,yc-x,WHITE);
 	putpixel(xc-x,yc-y,YELLOW);
 }
 
@@ -28,15 +28,25 @@ void drawCircle(int xc, int yc, int r){
 	}
 }
 
+//int main(){
+//	int x,y,r;
+//	printf("Enter center(x,y), radius(r) : ");
+//	scanf("%d%d%d",&x,&y,&r);
+//	int gd = DETECT , gm;
+//	initgraph(&gd,&gm,NULL);
+//	drawCircle(x,y,r);
+//	getch();
+//	closegraph();
+//	
+//	return 0;
+//}
+
 int main(){
-	int x,y,r;
-	printf("Enter center - x, y : ");
-	scanf("%d%d",&x,&y);
-	printf("Enter R : ");
-	scanf("%d",&r);
 	int gd = DETECT , gm;
 	initgraph(&gd,&gm,NULL);
-	drawCircle(x,y,r);
+	for(int i = 1 ; i <= 200; i += 1){
+		drawCircle(300,230,i);
+	}
 	getch();
 	closegraph();
 	
